@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button id="btnRandom" onclick="randomize()">Randomize!</button>
+        <h1 id="selectedStudent"></h1>
+    </body>
+
+    <script>
+        function randomize(){
+            var students =  [   "Brenda","Carlos","Claudia","Daniel","Edgar C.","Edgar T.",
+                                "Edwin", "Farid", "Francisco", "Héctor", "Isabela", "Javier",
+                                "Estefanía", "Mauricio", "Oscar", "Saul", "Sergio", "Vianey"
+                            ];
+            var random = Math.floor( Math.random() * students.length );
+            document.getElementById("selectedStudent").innerHTML = students[random];
+        }
+    </script>
+</html>
