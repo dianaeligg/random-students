@@ -3,8 +3,12 @@
     <head>
 			<title>Tec MTY Coding Bootcamp</title>
 			<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+			<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     	<style>
+				body{
+					font-family: 'Rubik', sans-serif;
+				}
     		#container{
     			width: 960px;
     			margin: auto;
@@ -40,6 +44,7 @@
 					background: lightgreen;
 					border-right: none;
 					min-width: 50px;
+					width: 16%;
 				}
 				.customButton{
 					display: inline;
@@ -47,34 +52,46 @@
 					border: 2px solid lightslategrey;
 					border-right: none;
 					min-width: 100px;
-					width: 60%;
+					width: 54%;
 				}
 
 				.customHowMany{
 					border: 2px solid lightslategrey;
 					border-radius: 0 10px 10px 0;
 					min-width: 50px;
+					width: 16%
+				}
+
+				.prettyBorder{
+					border: 5px solid darkcyan;
+					border-radius: 20px;
+					padding: 10px;
+					margin: 0 40px 10px 0;
+				}
+				#btnSelectAll, #btnSelectNone{
+					width: 49%;
+					height: 62px;
 				}
 		</style>
 		
     </head>
     <body>
     	<div id="container">
-			<div class="row">
+			<div class="row prettyBorder">
 				<div class="col-12">
 					<h1 class="centerText"> Whose turn is it? </h1>
 				</div>
 				<button id="btnRandom" class="btn btn-primary">Randomize!</button>
 			</div>
 			<div class="row">
-				<div class="col-4">
+				<div class="col-3 prettyBorder">
 					<button id="btnSelectAll" class="btn btn-primary">Select All</button>
 					<button id="btnSelectNone" class="btn btn-primary">Select None</button>
 					<ul id="studentChecklist" class="list-group">
 
 					</ul>
 				</div>
-				<div class="col-8">
+				<div class="col-8 prettyBorder">
 					<h1 id="selectedStudentName" class="centerText"></h1>
 					<img id="selectedStudentPicture" class="centerElement"/>
 				</div>
