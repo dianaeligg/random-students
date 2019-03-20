@@ -5,75 +5,7 @@
 			<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
 			<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    	<style>
-				body{
-					font-family: 'Rubik', sans-serif;
-				}
-    		#container{
-    			width: 960px;
-    			margin: auto;
-    		}
-
-    		#btnRandom{
-    			margin: auto;
-    			display: block;
-    		}
-
-    		.centerText{
-    			text-align: center;
-    		}
-
-    		.centerElement{
-    			margin: auto;
-    			display: block;
-    		}
-
-				ul{
-					margin: 10px 0 0 0;
-					list-style: none;
-				}
-
-				li{
-					margin: 5px 0;
-				}
-
-				.customCheckbox{
-					border: 2px solid lightslategrey;
-					display: inline;
-					border-radius: 10px 0 0 10px;
-					background: lightgreen;
-					border-right: none;
-					min-width: 50px;
-					width: 16%;
-				}
-				.customButton{
-					display: inline;
-					border-radius: 	0;
-					border: 2px solid lightslategrey;
-					border-right: none;
-					min-width: 100px;
-					width: 54%;
-				}
-
-				.customHowMany{
-					border: 2px solid lightslategrey;
-					border-radius: 0 10px 10px 0;
-					min-width: 50px;
-					width: 16%
-				}
-
-				.prettyBorder{
-					border: 5px solid darkcyan;
-					border-radius: 20px;
-					padding: 10px;
-					margin: 0 40px 10px 0;
-				}
-				#btnSelectAll, #btnSelectNone{
-					width: 49%;
-					height: 62px;
-				}
-		</style>
-		
+			<link rel="stylesheet" href="css/style.css">
     </head>
     <body>
     	<div id="container">
@@ -92,8 +24,8 @@
 					</ul>
 				</div>
 				<div class="col-8 prettyBorder">
-					<h1 id="selectedStudentName" class="centerText"></h1>
-					<img id="selectedStudentPicture" class="centerElement"/>
+					<h1 id="selectedStudentName" class="centerText">No one yet</h1>
+					<img id="selectedStudentPicture" src="https://www.fillmurray.com/500/500" class="centerElement"/>
 				</div>
 			</div>
 		</div>
@@ -101,125 +33,7 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script>
-	        
-			
-			$(document).ready(function(){
-				var students =  [   	
-										{id: "brenda", name: "Brenda", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "carlos", name: "Carlos", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "claudia", name: "Claudia", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "daniel", name: "Daniel", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "edgarc", name: "Edgar C.", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "edgart", name: "Edgar T.", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "edwin", name: "Edwin", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "farid", name: "Farid", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "francisco", name: "Francisco", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "hector", name: "Héctor", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "isabela", name: "Isabela", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "javier", name: "Javier",image: "pictures/500.png", active:"true", howMany:0},
-										{id: "estefanía", name: "Estefanía", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "mauricio", name: "Mauricio", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "oscar", name: "Oscar", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "saul", name: "Saul", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "sergio", name: "Sergio", image: "pictures/500.png", active:"true", howMany:0},
-										{id: "vianey", name: "Vianey", image: "pictures/500.png", active:"true", howMany:0}
-									];
-				function randomize(){
-					var random = Math.floor( Math.random() * students.length );
-					$("#selectedStudentName").text(students[random].name);
-					$("#selectedStudentPicture").attr("src",students[random].image);
-				}
-
-				function selectAll(all){
-					students.forEach(function(student,i){
-						student.active = all;
-						updateActive(student);
-					});
-					
-				}
-
-				function randomize(){
-					var activeStudents = students.filter(st => st.active);
-					console.log(activeStudents);
-					var random = Math.floor( Math.random() * activeStudents.length );
-					$("#selectedStudentName").text(activeStudents[random].name);
-					$("#selectedStudentPicture").attr("src",activeStudents[random].image);
-					activeStudents[random].howMany++;
-					updateHowMany(activeStudents[random]);
-				}
-
-				$("#btnRandom").on("click", function(){
-					randomize();
-				});
-				$("#btnSelectAll").on("click", function(){
-					selectAll(true);
-				});
-				$("#btnSelectNone").on("click", function(){
-					selectAll(false);
-				});
-				function fillChecklist(){
-					students.forEach(function(student, i){
-						var li = $('<li>');
-						var cb = $('<button class="btn">');
-						cb.addClass("customCheckbox");
-						cb.attr("id", "cb" + student.id)
-						cb.text("O");
-						li.append(cb);
-						var btn = $('<button class="btn">');
-						btn.addClass("customButton");
-						btn.attr('value', student.id);
-						btn.text(student.name);
-						btn.on("click",function(a){
-							var st = students.find(s => s.id == this.value);
-							st.active = !st.active;
-							console.log(st);
-							updateActive(st);				
-						});
-						li.append(btn);
-						var hm = $('<button class="btn">');
-						hm.addClass("customHowMany")
-						hm.text(student.howMany);
-						hm.attr("id", "hm"+ student.id);
-						li.append(hm);
-						// var custom = $('<div class="custom-control custom-checkbox">')
-						// var cb = $("<input class='studentCheckbox custom-control-input' type='checkbox'>");
-						// cb.attr("checked", true);
-						// cb.attr("id", "cb" + student.id);
-						// cb.attr("value", student.id);
-						// cb.change(function(){
-						// 	var st = students.find(s => s.id == $(this)[0].value);
-						// 	st.active = !st.active;
-						// 	console.log(st);
-						// });
-						// custom.append(cb);
-						// custom.append("<label class='custom-control-label' for=cb"+student.id+">"+student.name+"</label>")
-						// li.append(custom);							
-						$("#studentChecklist").append(li);
-					});
-				}
-
-				function updateActive(st){
-					var cb = $('#cb'+ st.id);
-					if (st.active){
-						cb.css('background','lightgreen');
-						cb.text('O');
-					}
-					else{
-						cb.css('background','lightsalmon');
-						cb.text('X');
-					}
-				}
-
-				function updateHowMany(st){
-					var hm = $('#hm'+ st.id);
-					hm.text(st.howMany);
-				};
-
-
-				fillChecklist();
-			});
-	    </script>
+		<script src="js/random.js" charset="utf-8"></script>
     </body>
 
 

@@ -1,0 +1,70 @@
+body{
+    font-family: 'Rubik', sans-serif;
+}
+#container{
+    width: 960px;
+    margin: auto;
+}
+
+#btnRandom{
+    margin: auto;
+    display: block;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.centerElement{
+    margin: auto;
+    display: block;
+}
+
+ul{
+    margin: 10px 0 0 0;
+    list-style: none;
+}
+
+li{
+    margin: 5px 0;
+}
+
+.customCheckbox{
+    border: 2px solid lightslategrey;
+    display: inline;
+    border-radius: 10px 0 0 10px;
+    background: lightgreen;
+    border-right: none;
+    min-width: 50px;
+    width: 16%;
+}
+.customButton{
+    display: inline;
+    border-radius: 	0;
+    border: 2px solid lightslategrey;
+    border-right: none;
+    min-width: 100px;
+    width: 54%;
+}
+
+.customHowMany{
+    border: 2px solid lightslategrey;
+    border-radius: 0 10px 10px 0;
+    min-width: 50px;
+    width: 16%
+}
+
+.prettyBorder{
+    border: 5px solid darkcyan;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 40px 10px 0;
+}
+#btnSelectAll, #btnSelectNone{
+    width: 49%;
+    height: 62px;
+}
+
+#selectedStudentPicture{
+    width:550px;
+}
