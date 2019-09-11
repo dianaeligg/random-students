@@ -1,76 +1,72 @@
-body, html {
-  margin: 0;
+
+// tec blue: 0, 51, 153
+
+body, html{
+    margin: 0;
 }
 
-body {
-  height: 100%;
-  font-family: 'Montserrat';
+body{
+    height: 100%;
+    font-family: 'Montserrat';
 }
 
-aside {
-  background: red;
-  width: 25%;
-  float: left;
-  height: 98vh;
-  border: black solid 1vh;
+aside{
+    background: rgb(0,51,153);
+    width: 25%;
+    float:left;
+    height: 98vh;
+    border: black solid 1vh;
 }
 
-button {
-  background: blue;
-  border: none;
-  padding: 8px;
-  color: white;
-  font-weight: bold;
-  -webkit-box-shadow: 5px;
-          box-shadow: 5px;
+button{
+    background: blue;
+    border: none;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 5px; 
 }
 
-.container {
-  background: paleturquoise;
-  height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
+.container{
+    background: paleturquoise;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
 }
 
-.title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.title{
+    display: flex;
+
+    .main-logo{
+        width: 25%;
+        height: 25%;
+        display: flex;
+        margin: auto 10px;
+    }
+    
+    .title-text{
+        font-size: 2em;
+        margin: auto;
+        display: flex;
+        width:74%;
+    }
 }
 
-.title .main-logo {
-  width: 25%;
-  height: 25%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto 10px;
+.image-container{
+    margin-top: 4em;
+
+    #btn-randomize{
+        display: block;
+        margin: 20px auto;
+    }
+    
+    .student-image{
+        margin:auto;
+        display:block;
+    }
 }
 
-.title .title-text {
-  font-size: 2em;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 74%;
-}
 
-.image-container {
-  margin-top: 4em;
-}
-
-.image-container #btn-randomize {
-  display: block;
-  margin: 20px auto;
-}
-
-.image-container .student-image {
-  margin: auto;
-  display: block;
-}
 
 /* body{
     font-family: 'Rubik', sans-serif;
@@ -142,4 +138,3 @@ li{
 #selectedStudentPicture{
     width:550px;
 } */
-/*# sourceMappingURL=style.css.map */
