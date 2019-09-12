@@ -1,0 +1,28 @@
+{
+    "students":
+    [
+        {"id": "alejandrol", "name": "Alejandro L.", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "alejandrov", "name": "Alejandro V.", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "dafne", "name": "Dafne", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "daphne", "name": "Daphne", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "emiliano", "name": "Emiliano", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "fernando", "name": "Fernando", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "francisco", "name": "Francisco", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "froylan", "name": "Froylan", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "guillermo", "name": "Guillermo", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "hugo", "name": "Hugo", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "humberto", "name": "Humberto", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "diana", "name": "Diana", "image": "https://www.fillmurray.com/500/500", "active":false, "howMany":0},
+        {"id": "jeronimo", "name": "Jeronimo", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "joaquin", "name": "Joaquín", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "josealfredo", "name": "J. Alfredo", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "lesly", "name": "Lesly", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "luisjoel", "name": "Luis Joel", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "mario", "name": "Mario", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "miguel", "name": "Miguel", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "miguelangel", "name": "M. Ángel", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "omar", "name": "Omar", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "sandra", "name": "Sandra", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "santiago", "name": "Santiago", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0}
+    ]
+}

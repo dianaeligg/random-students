@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Random Students</title>
+    <script src="https://kit.fontawesome.com/3dfee92732.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,19 +14,16 @@
         <aside>
             <div class="title">
                 <img src="./images/tec.png" alt="TEC Logo" class="main-logo">
-                <span class="title-text">Whose tuarn is it?</span>
+                <span class="title-text">Whose turn is it?</span>
             </div>
             <div class="students">
                 <div class="select-buttons">
-                    <button>Select All</button>
+                    <button id="btnSelectAll">Select All</button>
                     <button>Select None</button>
                 </div>
                 <div class="student-list">
                     <ul>
-                        <li>Diana</li>
-                        <li>Elizabeth</li>
-                        <li>Silvana</li>
-                        <li>Luis</li>
+                        
                     </ul>
                 </div>
             </div>
@@ -33,9 +31,19 @@
         <div class="container">
             <div class="image-container">
                 <img class="student-image" src="http://placekitten.com/500/500" alt="Kitties!">
+                <span class="selected-student">Diana</span>
                 <button id="btn-randomize">Randomize!</button>
             </div>
         </div>
+        <div class="import-div">
+            <!-- <i class="fas fa-file-upload"></i> -->
+            <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-file-upload fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/random.js"></script>
 </body>
 </html>

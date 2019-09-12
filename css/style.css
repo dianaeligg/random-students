@@ -8,25 +8,40 @@ body {
 }
 
 aside {
-  background: red;
+  background: #003399;
   width: 25%;
   float: left;
-  height: 98vh;
-  border: black solid 1vh;
+  height: 100vh;
+  color: white;
 }
 
 button {
-  background: blue;
-  border: none;
   padding: 8px;
-  color: white;
   font-weight: bold;
-  -webkit-box-shadow: 5px;
-          box-shadow: 5px;
+  -webkit-box-shadow: 1px 1px 1px 0px #bdbdbd;
+          box-shadow: 1px 1px 1px 0px #bdbdbd;
+  border: none;
+  font-family: 'Montserrat';
+}
+
+button:active {
+  -webkit-box-shadow: inset 2px 2px 2px 0px #bdbdbd;
+          box-shadow: inset 2px 2px 2px 0px #bdbdbd;
+}
+
+.select-buttons {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.select-buttons button {
+  background: white;
+  color: #003399;
+  margin: 0 5px;
 }
 
 .container {
-  background: paleturquoise;
+  background: white;
   height: 100vh;
   display: -ms-grid;
   display: grid;
@@ -34,15 +49,22 @@ button {
       grid-template-columns: auto;
 }
 
+.container button {
+  background: #003399;
+  color: white;
+}
+
 .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 15px;
 }
 
 .title .main-logo {
   width: 25%;
   height: 25%;
+  max-width: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,7 +72,7 @@ button {
 }
 
 .title .title-text {
-  font-size: 2em;
+  font-size: 1.8em;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,12 +86,89 @@ button {
 
 .image-container #btn-randomize {
   display: block;
-  margin: 20px auto;
+  margin: auto;
+  height: 8%;
+  width: 30%;
+  font-size: 1.5em;
 }
 
 .image-container .student-image {
   margin: auto;
   display: block;
+  width: 500px;
+}
+
+.image-container .selected-student {
+  text-align: center;
+  display: block;
+  font-size: 4em;
+  margin: 20px auto;
+}
+
+.student-list ul {
+  margin: 0;
+  padding-inline: unset;
+}
+
+.student-list li {
+  list-style: none;
+  padding: 0px;
+  background: #212121;
+  margin: 4px 2em;
+  color: #fff;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+}
+
+.student-list li .pre-student-name {
+  background: red;
+  height: 100%;
+  width: 20%;
+  max-width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: inset 1px 1px 1px 0px #bdbdbd;
+          box-shadow: inset 1px 1px 1px 0px #bdbdbd;
+}
+
+.student-list li .pre-student-name.active {
+  background: green;
+}
+
+.student-list li .student-name {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.student-list li:hover {
+  background: #515151;
+  background: linear-gradient(45deg, #212121 30%, #515151, #bdbdbd);
+}
+
+.import-div {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  padding: 10px 20px 10px 10px;
+  background: #212121;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+.import-div .fa-stack-2x {
+  color: white;
+}
+
+.import-div .fa-stack-1x {
+  color: #212121;
 }
 
 /* body{

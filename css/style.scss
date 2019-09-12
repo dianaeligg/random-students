@@ -1,5 +1,9 @@
 
 // tec blue: 0, 51, 153
+$tec-blue: rgb(0,51,153);
+$dark-grey: #212121;
+$med-grey: #515151;
+$light-grey: #bdbdbd;
 
 body, html{
     margin: 0;
@@ -11,41 +15,64 @@ body{
 }
 
 aside{
-    background: rgb(0,51,153);
+    background: $tec-blue;
     width: 25%;
     float:left;
-    height: 98vh;
-    border: black solid 1vh;
+    height: 100vh;
+    color: white;
+    // border: black solid 1vh;
 }
 
 button{
-    background: blue;
-    border: none;
     padding: 8px;
-    color: white;
     font-weight: bold;
-    box-shadow: 5px; 
+    box-shadow: 1px 1px 1px 0px $light-grey; 
+    border: none;
+    font-family: 'Montserrat';
+}
+
+button:active{
+    box-shadow: inset 2px 2px 2px 0px $light-grey; 
+}
+
+.select-buttons{
+
+    margin: 15px 0;
+    text-align: center;
+
+    button{
+        background: white;
+        color: $tec-blue;
+        margin: 0 5px; 
+    }
 }
 
 .container{
-    background: paleturquoise;
+    background: white;
     height: 100vh;
     display: grid;
     grid-template-columns: auto;
+
+    button{
+        background: $tec-blue;
+        color: white;
+    }
 }
 
 .title{
     display: flex;
+    margin-top: 15px;
 
     .main-logo{
         width: 25%;
         height: 25%;
+        max-width: 80px;
         display: flex;
         margin: auto 10px;
     }
     
     .title-text{
-        font-size: 2em;
+        font-size: 1.8em;
         margin: auto;
         display: flex;
         width:74%;
@@ -57,14 +84,99 @@ button{
 
     #btn-randomize{
         display: block;
-        margin: 20px auto;
+        margin: auto;
+        height: 8%;
+        width: 30%;
+        font-size: 1.5em;
     }
     
     .student-image{
         margin:auto;
         display:block;
+        width: 500px;
+    }
+
+    .selected-student{
+        // margin: auto;
+        text-align: center;
+        display: block;
+        font-size: 4em;
+        margin: 20px auto;
     }
 }
+
+.student-list{
+
+    ul{
+        margin: 0;
+        padding-inline: unset;
+    }
+
+    li{
+        list-style: none;
+        padding: 0px;
+        background: $dark-grey;
+        
+        margin: 4px 2em;
+        color: #fff;
+        height: 30px;
+        display: flex;
+        font-size: 12px;
+
+        .pre-student-name{
+            background: red;
+            height: 100%;
+            width: 20%;
+            max-width: 30px;
+            display: flex;
+            box-shadow: inset 1px 1px 1px 0px $light-grey;
+        }
+
+        .pre-student-name.active{
+            background: green;
+        }
+
+        .student-name{
+            margin: auto;
+            display: flex;
+        }
+    }
+
+    li:hover{
+        background:#515151;
+        background: linear-gradient(45deg,$dark-grey 30%, $med-grey, $light-grey);
+    }
+}
+
+.import-div{
+    position:absolute;
+    right: 0;
+    bottom: 20px;
+    padding: 10px 20px 10px 10px;
+    background: $dark-grey;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    // width: 30px;
+    transition: width 1s;
+
+    .fa-stack-2x{
+        color: white;
+    }
+
+    .fa-stack-1x {
+        color: $dark-grey;
+    }
+}
+
+.import-div:hover{
+    // width: 120px;
+    // background: red;
+    // :before{
+    //     content: "Import JSON";
+    //     font-family: 'Montserrat';
+    // }
+}
+
 
 
 
