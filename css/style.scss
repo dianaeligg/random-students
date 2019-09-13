@@ -4,6 +4,7 @@ $tec-blue: rgb(0,51,153);
 $dark-grey: #212121;
 $med-grey: #515151;
 $light-grey: #bdbdbd;
+$lighter-grey: #d3d3d3;
 
 body, html{
     margin: 0;
@@ -20,6 +21,8 @@ aside{
     float:left;
     height: 100vh;
     color: white;
+    box-shadow: 5px 0px 5px 0 $med-grey;
+    z-index: 40;
     // border: black solid 1vh;
 }
 
@@ -37,13 +40,14 @@ button:active{
 
 .select-buttons{
 
-    margin: 15px 0;
+    margin: 0;
     text-align: center;
 
     button{
         background: white;
         color: $tec-blue;
-        margin: 0 5px; 
+        margin: 5px 5px; 
+        width: 100px;
     }
 }
 
@@ -80,8 +84,6 @@ button:active{
 }
 
 .image-container{
-    margin-top: 4em;
-
     #btn-randomize{
         display: block;
         margin: auto;
@@ -89,62 +91,24 @@ button:active{
         width: 30%;
         font-size: 1.5em;
     }
-    
-    .student-image{
+
+    .student-image-bck{
         margin:auto;
         display:block;
-        width: 500px;
+        width: 100%;
+        min-height: 70%;
+        max-height: 70%;
+        background: url('http://placekitten.com/500/500') no-repeat center center;
+        background-size: cover;
+        box-shadow: inset 5px 1px 5px 0 $med-grey;
     }
 
     .selected-student{
-        // margin: auto;
         text-align: center;
         display: block;
         font-size: 4em;
         margin: 20px auto;
-    }
-}
-
-.student-list{
-
-    ul{
-        margin: 0;
-        padding-inline: unset;
-    }
-
-    li{
-        list-style: none;
-        padding: 0px;
-        background: $dark-grey;
-        
-        margin: 4px 2em;
-        color: #fff;
-        height: 30px;
-        display: flex;
-        font-size: 12px;
-
-        .pre-student-name{
-            background: red;
-            height: 100%;
-            width: 20%;
-            max-width: 30px;
-            display: flex;
-            box-shadow: inset 1px 1px 1px 0px $light-grey;
-        }
-
-        .pre-student-name.active{
-            background: green;
-        }
-
-        .student-name{
-            margin: auto;
-            display: flex;
-        }
-    }
-
-    li:hover{
-        background:#515151;
-        background: linear-gradient(45deg,$dark-grey 30%, $med-grey, $light-grey);
+        text-shadow: 5px 5px 5px 5px #fff;
     }
 }
 
@@ -152,7 +116,7 @@ button:active{
     position:absolute;
     right: 0;
     bottom: 20px;
-    padding: 10px 20px 10px 10px;
+    padding: 10px 15px 10px 10px;
     background: $dark-grey;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -168,6 +132,8 @@ button:active{
     }
 }
 
+
+
 .import-div:hover{
     // width: 120px;
     // background: red;
@@ -177,76 +143,120 @@ button:active{
     // }
 }
 
+/* begin checkboxes code */
 
-
-
-/* body{
-    font-family: 'Rubik', sans-serif;
-}
-#container{
-    width: 960px;
-    margin: auto;
-}
-
-#btnRandom{
-    margin: auto;
+.inputGroup {
+    background-color: $lighter-grey;
     display: block;
+    margin: 6px 0;
+    position: relative;
+
+    label {
+      padding: 6px 30px;
+      width: 100%;
+      display: block;
+      text-align: left;
+      color: #3C454C;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      transition: color 200ms ease-in;
+      overflow: hidden;
+      font-size: 13px;
+
+      &:before {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        content: '';
+        background-color: #5562eb;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale3d(1, 1, 1);
+        transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        opacity: 0;
+        z-index: -1;
+      }
+
+      &:after {
+        width: 20px;
+        height: 20px;
+        content: '';
+        border: 2px solid red;
+        background-color: red;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+        background-repeat: no-repeat;
+        background-position: 1px 2px;
+        border-radius: 50%;
+        z-index: 2;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: all 200ms ease-in;
+      }
+    }
+
+    input:checked ~ label {
+      color: #fff;
+
+      &:before {
+        transform: translate(-50%, -50%) scale3d(56, 56, 1);
+        opacity: 1;
+      }
+
+      &:after {
+        height: 24px;
+        width: 24px;
+        background-position: 3px 3px;
+        background-color: green;
+        border-color: green;
+        box-shadow: 1px 0px 1px 0 $light-grey;
+      }
+    }
+
+    input {
+      width: 32px;
+      height: 32px;
+      order: 1;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      visibility: hidden;
+    }
+  }
+
+
+// codepen formatting
+.form {
+  padding: 0 16px;
+  max-width: 150px;
+  margin: 50px auto;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
 }
 
-.centerText{
-    text-align: center;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-.centerElement{
-    margin: auto;
-    display: block;
+html {
+  box-sizing: border-box;
 }
 
-ul{
-    margin: 10px 0 0 0;
-    list-style: none;
+code {
+  background-color: #9AA3AC;
+  padding: 0 8px;
 }
 
-li{
-    margin: 5px 0;
-}
+/* begin checkboxes code */
 
-.customCheckbox{
-    border: 2px solid lightslategrey;
-    display: inline;
-    border-radius: 10px 0 0 10px;
-    background: lightgreen;
-    border-right: none;
-    min-width: 50px;
-    width: 16%;
-}
-.customButton{
-    display: inline;
-    border-radius: 	0;
-    border: 2px solid lightslategrey;
-    border-right: none;
-    min-width: 100px;
-    width: 54%;
-}
-
-.customHowMany{
-    border: 2px solid lightslategrey;
-    border-radius: 0 10px 10px 0;
-    min-width: 50px;
-    width: 16%
-}
-
-.prettyBorder{
-    border: 5px solid darkcyan;
-    border-radius: 20px;
-    padding: 10px;
-    margin: 0 40px 10px 0;
-}
-#btnSelectAll, #btnSelectNone{
-    width: 49%;
-    height: 62px;
-}
-
-#selectedStudentPicture{
-    width:550px;
-} */

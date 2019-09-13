@@ -2,76 +2,60 @@ $(document).ready(function(){
 
     let students = [];
 
-    function selectAll(all){
-        students.forEach(function(student,i){
-            student.active = all;
+    function selectAll(check){
+        students.forEach((student,i)=>{
+            student.active = check;
             updateActive(student);
         });  
     }
 
     function randomize(){
         let activeStudents = students.filter(st => st.active);
+        let randomImgW = Math.floor( Math.random() * 40 ) + Math.floor($('.student-image-bck').width()) - 20;
+        let randomImgH = Math.floor( Math.random() * 40 ) + Math.floor($('.student-image-bck').height()) - 20;
+        $(".student-image-bck").css('background-image',"url(https://placekitten.com/"+ randomImgW + "/" + randomImgH + ")");
+        if (activeStudents.length < 1) {           
+            $(".selected-student").text('No active students');
+            return;
+        }
         console.log(activeStudents);
         let random = Math.floor( Math.random() * activeStudents.length );
         let student = activeStudents[random];
-        console.log(student);
-        let randomImg = Math.floor( Math.random() * 401 ) + 200;
-        $(".student-image").attr("src","https://placekitten.com/"+ randomImg + "/" + randomImg);
-        $(".selected-student").text(student.name);
+         $(".selected-student").text(student.name);
         let i = students.indexOf(student);
         students[i].active = false;
         students[i].howMany++;
-        // updateHowMany(activeStudents[random]);
+        updateActive(students[i]);
     }
 
     $("#btn-randomize").on("click", function(){
         randomize();
     });
     $("#btnSelectAll").on("click", function(){
-        console.log('click');
-        
-        // selectAll(true);
+        selectAll(true);
     });
     $("#btnSelectNone").on("click", function(){
         selectAll(false);
     });
 
     function fillChecklist(){
-        students.forEach(function(student, i){
-            var li = $('<li>');
-            var check = $('<div>');
-            check.addClass('pre-student-name');
-            check.addClass('cb'+student.id);
-            if (student.active) {
-                check.addClass('active');
-            }
-            else{
-                console.log(student.name);
-            }
-            li.append(check);
-            var name = $('<span>');
-            name.addClass('student-name');
-            name.text(student.name);
-            // console.log(name);
-            li.append(name);
-            $(".student-list ul").append(li);
+        students.forEach((student, i) =>{
+            var ig = $('<div>').addClass('inputGroup');
+            var id = 'option-'+student.id;
+            var input = $('<input>').attr('id', id).attr('name', id).attr('type', 'checkbox');
+            var label = $('<label>').attr('for', id).text(student.name);
+            if(student.active)
+                input.prop("checked", true);
+            ig.append(input);
+            ig.append(label);
+            $(".student-list").append(ig);
         });
     }
 
     function updateActive(st){
-        var cb = $('.cb'+ st.id);
-        if (st.active){
-            cb.addClass('active');
-        }
-        else{
-            cb.removeClass('active');
-        }
+        var cb = $('#option-'+ st.id);
+        cb.prop("checked", st.active);
     }
-
-    function updateHowMany(st){
-        var hm = $('#hm'+ st.id);
-        hm.text(st.howMany);
-    };
 
     function loadJSON(){
         $.getJSON( "json/students.json", json => {

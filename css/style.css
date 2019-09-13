@@ -13,6 +13,9 @@ aside {
   float: left;
   height: 100vh;
   color: white;
+  -webkit-box-shadow: 5px 0px 5px 0 #515151;
+          box-shadow: 5px 0px 5px 0 #515151;
+  z-index: 40;
 }
 
 button {
@@ -30,14 +33,15 @@ button:active {
 }
 
 .select-buttons {
-  margin: 15px 0;
+  margin: 0;
   text-align: center;
 }
 
 .select-buttons button {
   background: white;
   color: #003399;
-  margin: 0 5px;
+  margin: 5px 5px;
+  width: 100px;
 }
 
 .container {
@@ -80,10 +84,6 @@ button:active {
   width: 74%;
 }
 
-.image-container {
-  margin-top: 4em;
-}
-
 .image-container #btn-randomize {
   display: block;
   margin: auto;
@@ -92,10 +92,16 @@ button:active {
   font-size: 1.5em;
 }
 
-.image-container .student-image {
+.image-container .student-image-bck {
   margin: auto;
   display: block;
-  width: 500px;
+  width: 100%;
+  min-height: 70%;
+  max-height: 70%;
+  background: url("http://placekitten.com/500/500") no-repeat center center;
+  background-size: cover;
+  -webkit-box-shadow: inset 5px 1px 5px 0 #515151;
+          box-shadow: inset 5px 1px 5px 0 #515151;
 }
 
 .image-container .selected-student {
@@ -103,59 +109,14 @@ button:active {
   display: block;
   font-size: 4em;
   margin: 20px auto;
-}
-
-.student-list ul {
-  margin: 0;
-  padding-inline: unset;
-}
-
-.student-list li {
-  list-style: none;
-  padding: 0px;
-  background: #212121;
-  margin: 4px 2em;
-  color: #fff;
-  height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 12px;
-}
-
-.student-list li .pre-student-name {
-  background: red;
-  height: 100%;
-  width: 20%;
-  max-width: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-shadow: inset 1px 1px 1px 0px #bdbdbd;
-          box-shadow: inset 1px 1px 1px 0px #bdbdbd;
-}
-
-.student-list li .pre-student-name.active {
-  background: green;
-}
-
-.student-list li .student-name {
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.student-list li:hover {
-  background: #515151;
-  background: linear-gradient(45deg, #212121 30%, #515151, #bdbdbd);
+  text-shadow: 5px 5px 5px 5px #fff;
 }
 
 .import-div {
   position: absolute;
   right: 0;
   bottom: 20px;
-  padding: 10px 20px 10px 10px;
+  padding: 10px 15px 10px 10px;
   background: #212121;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -171,74 +132,128 @@ button:active {
   color: #212121;
 }
 
-/* body{
-    font-family: 'Rubik', sans-serif;
-}
-#container{
-    width: 960px;
-    margin: auto;
-}
-
-#btnRandom{
-    margin: auto;
-    display: block;
+/* begin checkboxes code */
+.inputGroup {
+  background-color: #d3d3d3;
+  display: block;
+  margin: 6px 0;
+  position: relative;
 }
 
-.centerText{
-    text-align: center;
+.inputGroup label {
+  padding: 6px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  -webkit-transition: color 200ms ease-in;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+  font-size: 13px;
 }
 
-.centerElement{
-    margin: auto;
-    display: block;
+.inputGroup label:before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  content: '';
+  background-color: #5562eb;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+          transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  -webkit-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
 }
 
-ul{
-    margin: 10px 0 0 0;
-    list-style: none;
+.inputGroup label:after {
+  width: 20px;
+  height: 20px;
+  content: '';
+  border: 2px solid red;
+  background-color: red;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 1px 2px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
 }
 
-li{
-    margin: 5px 0;
+.inputGroup input:checked ~ label {
+  color: #fff;
 }
 
-.customCheckbox{
-    border: 2px solid lightslategrey;
-    display: inline;
-    border-radius: 10px 0 0 10px;
-    background: lightgreen;
-    border-right: none;
-    min-width: 50px;
-    width: 16%;
-}
-.customButton{
-    display: inline;
-    border-radius: 	0;
-    border: 2px solid lightslategrey;
-    border-right: none;
-    min-width: 100px;
-    width: 54%;
+.inputGroup input:checked ~ label:before {
+  -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+          transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
 }
 
-.customHowMany{
-    border: 2px solid lightslategrey;
-    border-radius: 0 10px 10px 0;
-    min-width: 50px;
-    width: 16%
+.inputGroup input:checked ~ label:after {
+  height: 24px;
+  width: 24px;
+  background-position: 3px 3px;
+  background-color: green;
+  border-color: green;
+  -webkit-box-shadow: 1px 0px 1px 0 #bdbdbd;
+          box-shadow: 1px 0px 1px 0 #bdbdbd;
 }
 
-.prettyBorder{
-    border: 5px solid darkcyan;
-    border-radius: 20px;
-    padding: 10px;
-    margin: 0 40px 10px 0;
-}
-#btnSelectAll, #btnSelectNone{
-    width: 49%;
-    height: 62px;
+.inputGroup input {
+  width: 32px;
+  height: 32px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
 }
 
-#selectedStudentPicture{
-    width:550px;
-} */
+.form {
+  padding: 0 16px;
+  max-width: 150px;
+  margin: 50px auto;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+code {
+  background-color: #9AA3AC;
+  padding: 0 8px;
+}
+
+/* begin checkboxes code */
 /*# sourceMappingURL=style.css.map */
