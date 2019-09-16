@@ -114,33 +114,43 @@ button:active{
 
 .import-div{
     position:absolute;
-    right: 0;
+    right: 20px;
     bottom: 20px;
-    padding: 10px 15px 10px 10px;
-    background: $dark-grey;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    // width: 30px;
-    transition: width 1s;
+    background: $tec-blue;
+    width: 155px;
+    border-radius: 18px;
+    color: white;
+    background:white;
+    cursor: pointer;
+    
 
-    .fa-stack-2x{
-        color: white;
+    .import-text{
+      width: 100%;
+      clip-path: circle(14% at 84% 50%);
+      transition: all .3s ease-in-out;
+      background: $tec-blue;
+      border-radius: 18px;
+      padding: 8px 10px;
+      border: none;
+      
+      
+      i{
+        margin-left: 6px;
+        padding-right: 6px;
+      }
+
+      // }
+
+      &:hover{
+        clip-path: circle(75% at 50% 50%);
+      }
+
+      &:active{
+        box-shadow: inset 2px 2px 2px 0px $light-grey; 
+      }
     }
 
-    .fa-stack-1x {
-        color: $dark-grey;
-    }
-}
-
-
-
-.import-div:hover{
-    // width: 120px;
-    // background: red;
-    // :before{
-    //     content: "Import JSON";
-    //     font-family: 'Montserrat';
-    // }
+    
 }
 
 /* begin checkboxes code */

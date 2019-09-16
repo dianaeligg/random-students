@@ -114,22 +114,41 @@ button:active {
 
 .import-div {
   position: absolute;
-  right: 0;
+  right: 20px;
   bottom: 20px;
-  padding: 10px 15px 10px 10px;
-  background: #212121;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  -webkit-transition: width 1s;
-  transition: width 1s;
-}
-
-.import-div .fa-stack-2x {
+  background: #003399;
+  width: 155px;
+  border-radius: 18px;
   color: white;
+  background: white;
+  cursor: pointer;
 }
 
-.import-div .fa-stack-1x {
-  color: #212121;
+.import-div .import-text {
+  width: 100%;
+  -webkit-clip-path: circle(14% at 84% 50%);
+          clip-path: circle(14% at 84% 50%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background: #003399;
+  border-radius: 18px;
+  padding: 8px 10px;
+  border: none;
+}
+
+.import-div .import-text i {
+  margin-left: 6px;
+  padding-right: 6px;
+}
+
+.import-div .import-text:hover {
+  -webkit-clip-path: circle(75% at 50% 50%);
+          clip-path: circle(75% at 50% 50%);
+}
+
+.import-div .import-text:active {
+  -webkit-box-shadow: inset 2px 2px 2px 0px #bdbdbd;
+          box-shadow: inset 2px 2px 2px 0px #bdbdbd;
 }
 
 /* begin checkboxes code */

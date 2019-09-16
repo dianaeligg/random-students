@@ -13,6 +13,7 @@ $(document).ready(function(){
         let activeStudents = students.filter(st => st.active);
         let randomImgW = Math.floor( Math.random() * 40 ) + Math.floor($('.student-image-bck').width()) - 20;
         let randomImgH = Math.floor( Math.random() * 40 ) + Math.floor($('.student-image-bck').height()) - 20;
+        console.log(randomImgW, randomImgH);
         $(".student-image-bck").css('background-image',"url(https://placekitten.com/"+ randomImgW + "/" + randomImgH + ")");
         if (activeStudents.length < 1) {           
             $(".selected-student").text('No active students');
@@ -28,17 +29,21 @@ $(document).ready(function(){
         updateActive(students[i]);
     }
 
-    $("#btn-randomize").on("click", function(){
+    $("#btn-randomize").on("click", () => {
         randomize();
     });
-    $("#btnSelectAll").on("click", function(){
+    $("#btnSelectAll").on("click", () => {
         selectAll(true);
     });
-    $("#btnSelectNone").on("click", function(){
+    $("#btnSelectNone").on("click", () => {
         selectAll(false);
+    });
+    $('.import-div').on('click', () =>{
+        loadJSON('json/students.json');
     });
 
     function fillChecklist(){
+        $('.student-list').empty();
         students.forEach((student, i) =>{
             var ig = $('<div>').addClass('inputGroup');
             var id = 'option-'+student.id;
@@ -57,12 +62,13 @@ $(document).ready(function(){
         cb.prop("checked", st.active);
     }
 
-    function loadJSON(){
-        $.getJSON( "json/students.json", json => {
+    function loadJSON(jsonName){
+        students = [];
+        $.getJSON(jsonName, json => {
             students = json.students; 
             console.log(students);
             fillChecklist();
         });
     }
-    loadJSON();
+    loadJSON('json/students.json');
 });
