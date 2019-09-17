@@ -16,6 +16,7 @@ aside {
   -webkit-box-shadow: 5px 0px 5px 0 #515151;
           box-shadow: 5px 0px 5px 0 #515151;
   z-index: 40;
+  visibility: visible;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
@@ -322,6 +323,14 @@ code {
     color: white;
     padding: 10px 15px;
     border-radius: 20px;
+  }
+}
+
+@media only screen and (min-width: 551px) {
+  aside {
+    visibility: visible !important;
+    height: 100vh !important;
+    opacity: 1 !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
