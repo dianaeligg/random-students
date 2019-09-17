@@ -1,5 +1,4 @@
 
-// tec blue: 0, 51, 153
 $tec-blue: rgb(0,51,153);
 $dark-grey: #212121;
 $med-grey: #515151;
@@ -23,7 +22,7 @@ aside{
     color: white;
     box-shadow: 5px 0px 5px 0 $med-grey;
     z-index: 40;
-    // border: black solid 1vh;
+    transition: all 1s ease-in-out;
 }
 
 button{
@@ -138,8 +137,6 @@ button:active{
         margin-left: 6px;
         padding-right: 6px;
       }
-
-      // }
 
       &:hover{
         clip-path: circle(75% at 50% 50%);
@@ -268,3 +265,57 @@ code {
   padding: 0 8px;
 }
 
+/* end checkboxes code */
+
+.open-div{
+  display: none;
+  z-index: 200;
+  .fa-chevron-down{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .image-container #btn-randomize{
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 550px){
+  .image-container #btn-randomize{
+    font-size: .9em;
+  }
+
+  .import-div{
+    display: none;
+  }
+
+  aside{
+    // display: none;
+    height: 0;
+    visibility: hidden;
+    width: 100%;
+    opacity: 0;
+    float:none;
+    .title{
+      margin: 0;
+    }
+  }
+
+  .image-container{
+    .student-image-bck{
+      box-shadow: none;
+    }
+  }
+
+  .open-div{
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    background: $tec-blue;
+    color: white;
+    padding: 10px 15px;;
+    border-radius: 20px;
+  }
+}

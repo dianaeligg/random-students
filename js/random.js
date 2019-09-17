@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
     let students = [];
+    let isStudentOpen = false;
+    let tec_blue = 'rgb(0,51,153)';
 
     function selectAll(check){
         students.forEach((student,i)=>{
@@ -38,10 +40,30 @@ $(document).ready(function(){
     $("#btnSelectNone").on("click", () => {
         selectAll(false);
     });
-    $('.import-div').on('click', () =>{
-        $('#file-input').trigger('click', () => console.log('then'));
-        console.log($('#file-input').text());
-        // loadJSON('json/students.json');
+
+    $('#file-input').on('change', () =>{
+        let file = document.getElementById("file-input").files[0].name;
+        console.log(file, $('#file-input'));
+        loadJSON(file);
+    });
+
+    $('.open-div').on('click', () =>{
+        if (isStudentOpen){
+            $('aside').css('height', '0').css('visibility', 'hidden').css('opacity', '0'); 
+            $('.open-text').css('color', 'white');
+            $('.open-div').css('background', tec_blue);
+            $('.fa-chevron-up').show();
+            $('.fa-chevron-down').hide();
+        }
+        else{
+            $('aside').css('height', '100%').css('visibility', 'visible').css('opacity', '1');
+            $('.open-text').css('color', tec_blue);
+            $('.open-div').css('background', 'white');
+            $('.fa-chevron-up').hide();
+            $('.fa-chevron-down').show();
+        }
+        console.log('aside');
+        isStudentOpen = !isStudentOpen;
     });
 
 
@@ -84,7 +106,6 @@ $(document).ready(function(){
         students = [];
         $.getJSON(jsonName, json => {
             students = json.students; 
-            // console.log(students);
             fillChecklist();
         });
     }

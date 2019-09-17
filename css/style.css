@@ -16,6 +16,8 @@ aside {
   -webkit-box-shadow: 5px 0px 5px 0 #515151;
           box-shadow: 5px 0px 5px 0 #515151;
   z-index: 40;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 button {
@@ -272,5 +274,54 @@ html {
 code {
   background-color: #9AA3AC;
   padding: 0 8px;
+}
+
+/* end checkboxes code */
+.open-div {
+  display: none;
+  z-index: 200;
+}
+
+.open-div .fa-chevron-down {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .image-container #btn-randomize {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .image-container #btn-randomize {
+    font-size: .9em;
+  }
+  .import-div {
+    display: none;
+  }
+  aside {
+    height: 0;
+    visibility: hidden;
+    width: 100%;
+    opacity: 0;
+    float: none;
+  }
+  aside .title {
+    margin: 0;
+  }
+  .image-container .student-image-bck {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .open-div {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    background: #003399;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
