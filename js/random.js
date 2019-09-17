@@ -39,26 +39,44 @@ $(document).ready(function(){
         selectAll(false);
     });
     $('.import-div').on('click', () =>{
-        loadJSON('json/students.json');
+        $('#file-input').trigger('click', () => console.log('then'));
+        console.log($('#file-input').text());
+        // loadJSON('json/students.json');
     });
+
+
 
     function fillChecklist(){
         $('.student-list').empty();
         students.forEach((student, i) =>{
-            var ig = $('<div>').addClass('inputGroup');
-            var id = 'option-'+student.id;
-            var input = $('<input>').attr('id', id).attr('name', id).attr('type', 'checkbox');
-            var label = $('<label>').attr('for', id).text(student.name);
+            let ig = $('<div>').addClass('input-group').attr('id', 'ig-'+student.id);
+            let id = 'option-'+student.id;
+            let input = $('<input>').attr('id', id).attr('name', id).attr('type', 'checkbox');
+            let label = $('<label>').attr('for', id).text(student.name).addClass('lbl');
             if(student.active)
                 input.prop("checked", true);
             ig.append(input);
             ig.append(label);
             $(".student-list").append(ig);
         });
+        $('input[type=checkbox]').change( (e) => {
+            let st = studentFromId(e.target.id.replace('option-',''));
+            st.active = !st.active;
+            updateActive(st);
+        });
+    }
+
+    function studentFromId(id){
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].id === id)
+                return students[i];            
+        }
+        return null;
     }
 
     function updateActive(st){
-        var cb = $('#option-'+ st.id);
+        console.log('updateactive', st)
+        let cb = $('#option-'+ st.id);
         cb.prop("checked", st.active);
     }
 
@@ -66,7 +84,7 @@ $(document).ready(function(){
         students = [];
         $.getJSON(jsonName, json => {
             students = json.students; 
-            console.log(students);
+            // console.log(students);
             fillChecklist();
         });
     }

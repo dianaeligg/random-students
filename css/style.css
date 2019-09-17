@@ -152,14 +152,14 @@ button:active {
 }
 
 /* begin checkboxes code */
-.inputGroup {
+.input-group {
   background-color: #d3d3d3;
   display: block;
   margin: 6px 0;
   position: relative;
 }
 
-.inputGroup label {
+.input-group label {
   padding: 6px 30px;
   width: 100%;
   display: block;
@@ -174,7 +174,7 @@ button:active {
   font-size: 13px;
 }
 
-.inputGroup label:before {
+.input-group label:before {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -191,7 +191,7 @@ button:active {
   z-index: -1;
 }
 
-.inputGroup label:after {
+.input-group label:after {
   width: 20px;
   height: 20px;
   content: '';
@@ -212,17 +212,17 @@ button:active {
   transition: all 200ms ease-in;
 }
 
-.inputGroup input:checked ~ label {
+.input-group input:checked ~ label {
   color: #fff;
 }
 
-.inputGroup input:checked ~ label:before {
+.input-group input:checked ~ label:before {
   -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
           transform: translate(-50%, -50%) scale3d(56, 56, 1);
   opacity: 1;
 }
 
-.inputGroup input:checked ~ label:after {
+.input-group input:checked ~ label:after {
   height: 24px;
   width: 24px;
   background-position: 3px 3px;
@@ -232,7 +232,7 @@ button:active {
           box-shadow: 1px 0px 1px 0 #bdbdbd;
 }
 
-.inputGroup input {
+.input-group input {
   width: 32px;
   height: 32px;
   -webkit-box-ordinal-group: 2;
@@ -273,6 +273,4 @@ code {
   background-color: #9AA3AC;
   padding: 0 8px;
 }
-
-/* begin checkboxes code */
 /*# sourceMappingURL=style.css.map */
