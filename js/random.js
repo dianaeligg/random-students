@@ -105,7 +105,7 @@ $(document).ready(function(){
     function loadJSON(jsonName){
         students = [];
         $.getJSON(jsonName, json => {
-            students = json.students; 
+            students = json.students.filter(st => st.active); 
             fillChecklist();
         });
     }
