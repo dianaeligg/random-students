@@ -12,7 +12,7 @@
         {"id": "jorge", "name": "Jorge", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
         {"id": "kyle", "name": "Kyle", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
         {"id": "lore", "name": "Lore", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
-        {"id": "many", "name": "Many", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
+        {"id": "many", "name": "Many", "image": "https://www.fillmurray.com/500/500", "active":false, "howMany":0},
         {"id": "mel", "name": "Mel", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
         {"id": "pauli", "name": "Pauli", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
         {"id": "raul", "name": "Raul", "image": "https://www.fillmurray.com/500/500", "active":true, "howMany":0},
