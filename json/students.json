@@ -65,16 +65,16 @@
     },
     {
       "id": "luisf",
-      "name": "Luis F",
+      "name": "Francisco",
       "image": "https://www.fillmurray.com/500/500",
-      "active": false,
+      "active": true,
       "howMany": 0
     },
     {
       "id": "mario",
       "name": "Mario",
       "image": "https://www.fillmurray.com/500/500",
-      "active": true,
+      "active": false,
       "howMany": 0
     },
     {
