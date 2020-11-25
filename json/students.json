@@ -118,6 +118,13 @@
       "image": "https://www.fillmurray.com/500/500",
       "active": true,
       "howMany": 0
+    },
+    {
+      "id": "fernanda",
+      "name": "Fer",
+      "image": "https://www.fillmurray.com/500/500",
+      "active": true,
+      "howMany": 0
     }
   ]
 }
