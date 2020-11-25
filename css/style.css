@@ -12,7 +12,7 @@ aside {
   width: 25%;
   float: left;
   height: 100vh;
-  color: white;
+  color: yellow;
   -webkit-box-shadow: 5px 0px 5px 0 #515151;
           box-shadow: 5px 0px 5px 0 #515151;
   z-index: 40;
