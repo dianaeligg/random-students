@@ -101,7 +101,7 @@ button:active {
   width: 100%;
   min-height: 70%;
   max-height: 70%;
-  background: url("http://placekitten.com/500/500") no-repeat center center;
+  background: url("../images/codingimg.JPG") no-repeat center center;
   background-size: cover;
   -webkit-box-shadow: inset 5px 1px 5px 0 #515151;
           box-shadow: inset 5px 1px 5px 0 #515151;
