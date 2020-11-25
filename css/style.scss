@@ -27,15 +27,29 @@ aside{
 }
 
 button{
-    padding: 8px;
-    font-weight: bold;
-    box-shadow: 1px 1px 1px 0px $light-grey; 
-    border: none;
-    font-family: 'Montserrat';
+  box-shadow: 0px 0px 0px 2px #9ecdf0;
+  background:linear-gradient(to bottom, #84c1f0 5%, #70daf5 100%);
+  background-color:#84c1f0;
+  border-radius:10px;
+  border:1px solid #468b9c;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:5px 35px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2a4e66;
 }
 
 button:active{
-    box-shadow: inset 2px 2px 2px 0px $light-grey; 
+  position:relative;
+  top:1px;
+}
+
+button:hover {
+  background:linear-gradient(to bottom, #70daf5 5%, #84c1f0 100%);
+  background-color:#70daf5;
 }
 
 .select-buttons{
