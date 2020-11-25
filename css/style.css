@@ -41,14 +41,14 @@ button:active {
 }
 
 .select-buttons button {
-  background: white;
+  background: whitesmoke;
   color: #003399;
   margin: 5px 5px;
   width: 100px;
 }
 
 .container {
-  background: white;
+  background: whitesmoke;
   height: 100vh;
   display: -ms-grid;
   display: grid;
@@ -58,7 +58,7 @@ button:active {
 
 .container button {
   background: #003399;
-  color: white;
+  color: whitesmoke;
 }
 
 .title {
