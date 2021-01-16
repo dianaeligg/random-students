@@ -18,14 +18,14 @@
       "id": "arturo",
       "name": "Arturo",
       "image": "https://www.fillmurray.com/500/500",
-      "active": true,
+      "active": false,
       "howMany": 0
     },
     {
       "id": "cesar",
       "name": "César",
       "image": "https://www.fillmurray.com/500/500",
-      "active": true,
+      "active": false,
       "howMany": 0
     },
     {
@@ -53,7 +53,7 @@
       "id": "lili",
       "name": "Lili",
       "image": "https://www.fillmurray.com/500/500",
-      "active": true,
+      "active": false,
       "howMany": 0
     },
     {
